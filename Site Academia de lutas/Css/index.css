@@ -1,0 +1,456 @@
+:root {
+    --black100: #000;
+    --black50: #222;
+    --black25: #444;
+    --white: #fff;
+    --yellow: #ffd700; /* Cor amarela (substitua pela cor desejada) */
+    --yellowhover: #cca300; /* Cor amarela para o estado hover (substitua pela cor desejada) */
+    --overlay: rgba(0, 0, 0, 0.5); /* Cor de overlay (substitua pela cor desejada) */
+    --gray: #888;
+    --rose: #ff3399; /* Cor de rosa (substitua pela cor desejada) */
+    --rosehover: #cc0066; /* Cor de rosa para o estado hover (substitua pela cor desejada) */
+}
+
+body.light {
+    background-color: var(--white);
+}
+
+.section {
+    width: 100vw;
+}
+
+.button-rose a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+.button-rose button {
+    border: 2px solid;
+    border-radius: 1.5rem;
+    background: var(--rose);
+    border-color: var(--rose);
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color, border-color, transform 0.3s;
+    &:hover {
+        border-color: var(--rosehover);
+        background-color: var(--rosehover);
+        transform: translate(0, -5px);
+    }
+}
+
+.button-white button {
+    border: 2px solid;
+    border-radius: 1.5rem;
+    border-color: var(--white);
+    background-color: none;
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color, transform 0.3s;
+    &:hover {
+        background-color: var(--overlay);
+        transform: translate(0, -5px);
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+/* THEME */
+.theme {
+    padding: 0.5rem;
+    position: relative;
+    height: 0.26rem;
+    width: 0.50rem;
+}
+
+.theme .label {
+    background-color: var(--white);
+    border-radius: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    height: 26px;
+    width: 50px;
+    transform: scale(1.5);
+}
+
+.label .ball {
+    background-color: var(--rose);
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 22px;
+    width: 22px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(24px);
+}
+
+/* HEADER */
+.header {
+    background-color: var(--black100);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.header .container {
+    position: relative;
+    z-index: 5;
+}
+
+.header::before {
+    content: '';
+    background: url(../Img/pexels-marta-dzedyshko-2775835.jpg) no-repeat center scroll;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 10%;
+}
+
+.container__navbar {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.links__navbar {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.links__navbar a {
+    color: var(--gray);
+    text-decoration: none;
+    transition: 0.1s;
+    &:hover {
+        color: var(--white);
+    }
+}
+
+.container__header {
+    height: 58rem;
+    padding: 7rem 4rem;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.container__header .img {
+    height: 50rem;
+    width: 68rem;
+}
+
+.container__text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container__text .btn {
+    display: flex;
+    gap: 1.12381239rem;
+}
+
+.container__header .contact {
+    display: flex;
+    flex-direction: row;
+    gap: 10rem;
+}
+
+.icon {
+    width: 5rem;
+    height: 5rem;
+    color: var(--rose);
+}
+
+/* ABOUTME */
+.aboutme {
+    background-color: var(--black50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content__aboutme {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container__aboutme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5rem;
+}
+
+.img__aboutme {
+    width: 150rem;
+    height: 40rem;
+}
+
+.text__aboutme {
+    text-align: left;
+    margin: 0 0 1rem 0;
+}
+
+/* NEEDHELP */
+.section__needhelp {
+    height: 24rem;
+    position: relative;
+    background-image: url(../Img/Treino.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+}
+
+.section__needhelp::before {
+    content: '';
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay);
+}
+
+.container__needhelp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* SKILLS */
+.section_skills {
+    background-color: var(--black25);
+}
+
+.section_skills .container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.section_skills .content {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.section_skills .card {
+    background-color: var(--black50);
+    width: 26rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.section_skills .titulo {
+    background-color: rgba(9, 7, 8, 0.25);
+    text-align: center;
+    padding: 1.2rem;
+}
+
+.section_skills .col {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    gap: 2rem;
+    padding-top: 3rem;
+}
+
+.section_skills .row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 50%;
+}
+
+/* CERTIFICATES */
+.section_certificates {
+    background-color: var(--black50);
+}
+
+.section_certificates .container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PROJECTS */
+.section_projects {
+    background-color: var(--black25);
+}
+
+.container__projects {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.col__projects {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card__projects {
+    width: 35rem;
+    height: 35rem;
+    background-color: var(--black50);
+}
+
+.card-content {
+    padding-top: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 30%;
+}
+
+.card-info {
+    display: flex;
+    gap: 1rem;
+}
+
+.card-info img {
+    width: 2rem;
+}
+
+.card-image {
+    width: 100%;
+}
+
+.card-image img {
+    width: 100%;
+}
+
+.content__projects {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CONTACT */
+.section_contact {
+    background-color: var(--black50);
+}
+
+.section_contact .container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.section_contact .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.section_contact .card {
+    background-color: var(--black25);
+    width: 45rem;
+    height: 30rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.section_contact .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.section_contact input,
+.section_contact textarea,
+.redes {
+    background-color: var(--black50);
+    border: unset;
+    width: 35rem;
+    height: 3.75rem;
+    padding: 1rem;
+}
+
+.section_contact textarea {
+    width: 35rem;
+    height: 7.8125rem;
+}
+
+.section_contact .redes {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.section_contact a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+/* FOOTER */
+.footer {
+    background-color: var(--black100);
+    height: 10rem;
+    display: flex;
+    align-items: center;
+}
+
+.footer .container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.footer .direitos {
+    color: var(--rose);
+}

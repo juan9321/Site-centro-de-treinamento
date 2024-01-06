@@ -1,0 +1,239 @@
+:root{
+    --white:#FFFFFF;
+    --gray:#958D95;
+    --rose:#E62949;
+    --overlay:rgba(255, 0, 43, 0.05);
+    --lightrose:#F84967;
+    --rosehover: #a0132a; 
+    --black100:#090708;
+    --black75:#0E0C0E;
+    --black50:#141114;
+    --black25:#1C171B;
+    --size-xxs: 0.5rem;
+    --size-xs: 0.75rem;
+    --size-sm: 0.875rem;
+    --size-base: 1rem;
+    --size-lg: 1.125rem;
+    --size-xl: 1.25rem;
+    --size-2x: 1.5rem;
+    --size-3x: 1.875rem;
+    --size-4x: 2.25rem;
+    --size-5x: 3rem;
+    --size-6x: 3.5rem;
+    --size-7x: 4.5rem;
+    --size-8x: 6rem;
+    --size-9x: 8rem;
+    --size-10x: 10rem;
+}
+.light-mode{
+  --white:#000000;
+  --gray:##353135;
+  --rose:#E62949;
+  --overlay:rgba(255, 0, 43, 0.05);
+  --lightrose:#F84967;
+  --rosehover: #a0132a; 
+  --black100:#ffffff;
+  --black75:#f2f2f2;
+  --black50:#e6e6e6;
+  --black25:#d9d9d9;
+}
+@font-face {
+  font-family:Roboto-Regular;
+  src: url(Roboto-Regular.ttf);
+}
+@font-face {
+  font-family:Roboto-Medium;
+  src: url(Roboto-Medium.ttf);
+}
+@font-face {
+  font-family: Roboto-Semibold;
+  src: url(Roboto-Bold.ttf);
+}
+@font-face {
+  font-family: Roboto-Bold;
+  src: url(Roboto-Black.ttf);
+}
+*, *::after, *::before{
+  margin: 0;
+  padding: 0;
+  line-height: calc(1em + 0.5rem);
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  color: var(--white);
+  background-color: var(--black25);
+  font-family: Roboto-Regular;
+  overflow-x: hidden;
+  transition: all 0.3s;
+}
+img,picture,video,canvas,svg{
+  display: block;
+  max-width: 100%;
+  user-select: none;
+}
+button{
+  display: inline-block;
+  padding: 0;
+  font-size: var(--size-lg);
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--white);
+}
+.hr{
+  height: 2px;
+  background-color: var(--rose);
+  width: 90%;
+  border-radius: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.lgtitle{
+  font-size: var(--size-6x);
+  font-family: Roboto-Semibold;
+}
+.smtitle{
+  font-size: var(--size-5x);
+  font-family: Roboto-Bold;
+}
+.latitle {
+  font-size: var(--size-4x);
+  font-family: Roboto-Semibold;
+}
+.subtitle{
+  font-size: var(--size-2x);
+  font-family: Roboto-Medium;
+}
+.gray-text{
+  color: var(--gray);
+}
+.underline{
+  position: relative;
+}
+.center{
+  text-align: center;
+}
+.center a::before{
+  left: 10%;
+}
+.underline::before{
+  content: '';
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  bottom: 0;
+  background-color: var(--rose);
+  height: 4px;
+  border-radius: 1rem;
+  width: 80%;
+}
+.underline::after{
+  content: '';
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  bottom: 0;
+  background-color: var(--lightrose);
+  height: 4px;
+  border-radius: 1rem;
+  width: 100%;
+}
+.underline__center{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.underline__center::before{
+  content: '';
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  bottom: 0;
+  background-color: var(--rose);
+  height: 4px;
+  border-radius: 1rem;
+  width: 80%;
+}
+.underline__center::after{
+  content: '';
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  bottom: 0;
+  background-color: var(--lightrose);
+  height: 4px;
+  border-radius: 1rem;
+  width: 100%;
+}
+.container {
+  max-width: 1536px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  /* border: 1px solid red; */
+}
+strong {
+  color: var(--rose);
+}
+@media (max-width: 1536px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 768px;
+  }
+  button{
+    font-size: var(--size-base);
+  }
+  .lgtitle{
+    font-size: var(--size-5x);
+  }
+  .smtitle{
+    font-size: var(--size-4x);
+  }
+  .subtitle{
+    font-size: var(--size-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    max-width: 475px;
+  }
+  button{
+    font-size: var(--size-sm);
+  }
+  .lgtitle{
+    font-size: var(--size-4x);
+  }
+  .smtitle{
+    font-size: var(--size-3x);
+  }
+  .subtitle{
+    font-size: var(--size-base);
+  }
+}
+
+@media (max-width: 475px) {
+  .container {
+    width: 100%;
+  }
+}
